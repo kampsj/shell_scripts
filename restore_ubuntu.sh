@@ -72,7 +72,12 @@ echo "##########################################################################
 echo "# Mouse gestures"
 echo "##########################################################################"
 echo 
-echo "Reboot the system now and run the install_gestures.sh script afterwards."
+echo "Reboot the system now and run the following commands afterwards:"
+echo
+echo "sudo libinput-gestures/libinput-gestures-setup install"
+echo "libinput-gestures/libinput-gestures-setup autostart"
+echo "libinput-gestures/libinput-gestures-setup start"
+echo "sudo python3 gestures/setup.py install"
 }
 
 ################################################################################
@@ -107,6 +112,14 @@ sudo apt install -y python3 python3-setuptools xdotool python3-gi libinput-tools
 echo "Add user to input"
 sudo gpasswd -a $USER input
 check_exit_status;
+
+echo "Clone repositories"
+git clone https://github.com/bulletmark/libinput-gestures.git
+check_exit_status;
+git clone https://gitlab.com/cunidev/gestures
+check_exit_status;
+
+echo "Done."
 
 echo "--------------------------------------------------------------------------"
 echo "- Install paper theme"
