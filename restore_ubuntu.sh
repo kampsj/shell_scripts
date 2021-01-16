@@ -6,7 +6,7 @@ clear
 #===============================================================================
 # Purpose:
 #   This script is used to get a fresh (x)ubuntu install up to speed.
-#
+#   Useage: ./restore_ubuntu.sh
 ################################################################################
 
 ################################################################################
@@ -53,6 +53,12 @@ echo "##########################################################################
 echo 
 echo "Change the icon to Paper"
 echo "Change the theme to Greybird-dark, also in the window manager"
+echo
+echo "##########################################################################"
+echo "# Other software"
+echo "##########################################################################"
+echo 
+echo "Install Zoom and VS Code (download most recent debs)"
 echo
 echo "##########################################################################"
 echo "# Misc"
@@ -110,27 +116,12 @@ echo
 sudo apt-get install -y $PWD/paper-icon-theme_1.5.728-202003121505~daily~ubuntu18.04.1_all.deb;
 check_exit_status;
 
-echo "--------------------------------------------------------------------------"
-echo "- Install zoom"
-echo "--------------------------------------------------------------------------"
-echo
-
-wget -O ~/Downloads/zoom_x86_64.deb "https://zoom.us/client/latest/zoom_x86_64.deb";
-check_exit_status;
-echo
-sudo apt-get install -y ~/Downloads/zoom_x86_64.deb;
-check_exit_status;
-
 echo
 echo "--------------------------------------------------------------------------"
-echo "- Install coding stuff"
+echo "- Install PyCharm"
 echo "--------------------------------------------------------------------------"
 echo
-wget -O ~/Downloads/vscode.deb "https://code.visualstudio.com/docs/?dv=linux64_deb";
-check_exit_status;
-sudo apt-get install -y ~/Downloads/vscode.deb;
-check_exit_status;
-sudo snap install pycharm-community;
+sudo snap install pycharm-community --classic;
 check_exit_status;
 echo "--------------------------------------------------------------------------"
 echo "- Install TLP"
