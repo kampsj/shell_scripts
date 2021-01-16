@@ -2,7 +2,7 @@
 clear
 ################################################################################
 # Written By: "Jesse"
-# Last update: 16-01-2020
+# Last update: 16-01-2020.
 #===============================================================================
 # Purpose:
 #   This script is used to get a fresh (x)ubuntu install up to speed.
